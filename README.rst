@@ -1,4 +1,4 @@
-This fork has minor changes to get support working with the MPU6050 clone board from HiLetGo
+This fork has minor changes to get support working with the MPU6050 clone board from HiLetGo. You need to compile it to mpy manually.
 
 Introduction
 ============

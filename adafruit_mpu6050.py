@@ -26,6 +26,12 @@ Implementation Notes
 * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
+"""
+Forked from Adafruit CircuitPython MPU6050 library to support MPU6050 breakout board from HiLetGo
+Matt Campagna
+2021
+"""
+
 # imports
 
 __version__ = "0.0.0-auto.0"
@@ -143,8 +149,12 @@ class MPU6050:
     def __init__(self, i2c_bus, address=_MPU6050_DEFAULT_ADDRESS):
         self.i2c_device = i2c_device.I2CDevice(i2c_bus, address)
 
-        if self._device_id != _MPU6050_DEVICE_ID:
-            raise RuntimeError("Failed to find MPU6050 - check your wiring!")
+        """
+        This block of code causes an issue with the MPU6050 breakout board from HiLetGo,
+        so comment it out and appears to work fine.
+        """
+        #if self._device_id != _MPU6050_DEVICE_ID:
+        #    raise RuntimeError("Failed to find MPU6050 - check your wiring!")
 
         self.reset()
 
